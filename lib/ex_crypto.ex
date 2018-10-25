@@ -250,7 +250,7 @@ defmodule ExCrypto do
   def encrypt(key, clear_text) do
     # new 128 bit random initialization_vector
     {:ok, initialization_vector} = rand_bytes(16)
-    _encrypt(key, initialization_vector, pad(clear_text, @aes_block_size), :aes_cbc256)
+    _encrypt(key, initialization_vector, pad(clear_text, @aes_block_size), :aes_cbc128)
   catch
     kind, error ->
       {:ok, initialization_vector} = rand_bytes(16)
